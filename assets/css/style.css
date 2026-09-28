@@ -1,0 +1,183 @@
+/* =========================================================
+   Student Management System - Custom Styles
+   Built on top of Bootstrap 5 utility classes.
+   ========================================================= */
+
+:root {
+  --sms-primary: #4f46e5;
+  --sms-primary-dark: #4338ca;
+  --sms-accent: #06b6d4;
+  --sms-bg: #f4f6fb;
+  --sms-sidebar-bg: #1e1b4b;
+  --sms-sidebar-hover: #312e81;
+  --sms-radius: 14px;
+}
+
+body {
+  background-color: var(--sms-bg);
+  font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+}
+
+/* ---------- Auth pages ---------- */
+.auth-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--sms-primary) 0%, var(--sms-accent) 100%);
+  padding: 24px;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 420px;
+  background: #fff;
+  border-radius: var(--sms-radius);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
+  padding: 2.25rem;
+}
+
+.auth-card .brand {
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: var(--sms-primary);
+}
+
+.auth-toggle a {
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.auth-switch-tabs {
+  display: flex;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+  margin-bottom: 1.5rem;
+}
+.auth-switch-tabs a {
+  flex: 1;
+  text-align: center;
+  padding: 10px 0;
+  text-decoration: none;
+  color: #6b7280;
+  font-weight: 600;
+  background: #f9fafb;
+}
+.auth-switch-tabs a.active {
+  background: var(--sms-primary);
+  color: #fff;
+}
+
+/* ---------- App shell (dashboard layout) ---------- */
+.app-sidebar {
+  min-height: 100vh;
+  width: 250px;
+  background: var(--sms-sidebar-bg);
+  color: #e0e7ff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding-top: 1.25rem;
+  transition: transform 0.25s ease;
+  z-index: 1030;
+}
+
+.app-sidebar .brand {
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.2rem;
+  padding: 0 1.25rem 1.25rem;
+  display: block;
+}
+
+.app-sidebar .nav-link {
+  color: #c7d2fe;
+  padding: 0.65rem 1.25rem;
+  border-radius: 0;
+  font-size: 0.95rem;
+}
+
+.app-sidebar .nav-link:hover,
+.app-sidebar .nav-link.active {
+  background: var(--sms-sidebar-hover);
+  color: #fff;
+  border-left: 3px solid var(--sms-accent);
+}
+
+.app-content {
+  margin-left: 250px;
+  padding: 1.75rem;
+  min-height: 100vh;
+}
+
+.app-topbar {
+  background: #fff;
+  border-radius: var(--sms-radius);
+  padding: 0.9rem 1.25rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media (max-width: 991.98px) {
+  .app-sidebar {
+    transform: translateX(-100%);
+  }
+  .app-sidebar.show {
+    transform: translateX(0);
+  }
+  .app-content {
+    margin-left: 0;
+  }
+}
+
+/* ---------- Cards / widgets ---------- */
+.stat-card {
+  border: none;
+  border-radius: var(--sms-radius);
+  color: #fff;
+  padding: 1.25rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+.stat-card.bg-purple { background: linear-gradient(135deg, #6366f1, #4338ca); }
+.stat-card.bg-teal   { background: linear-gradient(135deg, #06b6d4, #0891b2); }
+.stat-card.bg-orange { background: linear-gradient(135deg, #f59e0b, #d97706); }
+.stat-card.bg-pink    { background: linear-gradient(135deg, #ec4899, #db2777); }
+
+.card {
+  border: none;
+  border-radius: var(--sms-radius);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+}
+
+.badge-status-Present, .badge-status-Approved, .badge-status-Completed { background-color: #16a34a; }
+.badge-status-Absent, .badge-status-Rejected { background-color: #dc2626; }
+.badge-status-Leave, .badge-status-Pending { background-color: #d97706; }
+
+.table thead th {
+  background: #eef2ff;
+  border-bottom: none;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: #4338ca;
+}
+
+.btn-primary {
+  background-color: var(--sms-primary);
+  border-color: var(--sms-primary);
+}
+.btn-primary:hover {
+  background-color: var(--sms-primary-dark);
+  border-color: var(--sms-primary-dark);
+}
+
+.sidebar-toggle-btn {
+  display: none;
+}
+@media (max-width: 991.98px) {
+  .sidebar-toggle-btn { display: inline-flex; }
+}

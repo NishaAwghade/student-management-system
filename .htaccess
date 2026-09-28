@@ -1,0 +1,26 @@
+# Student Management System - Apache configuration
+
+# Disable directory browsing
+Options -Indexes
+
+# Protect sensitive folders from direct listing (config, core, models, controllers, views)
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+</IfModule>
+
+# Deny access to .sql, .md and .log files from the web
+<FilesMatch "\.(sql|md|log|env)$">
+  Require all denied
+</FilesMatch>
+
+# Prevent execution of PHP inside the uploads folder (security best practice)
+<IfModule mod_php7.c>
+  <Directory "assets/uploads">
+    php_flag engine off
+  </Directory>
+</IfModule>
+<IfModule mod_php8.c>
+  <Directory "assets/uploads">
+    php_flag engine off
+  </Directory>
+</IfModule>

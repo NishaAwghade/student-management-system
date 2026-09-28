@@ -1,0 +1,8 @@
+# Prevent any script execution inside the uploads directory.
+# This is important because users can upload files here - we never
+# want an uploaded .php file (even if renamed) to be executable.
+<FilesMatch "\.(php|php3|php4|php5|phtml|pl|py|cgi|sh)$">
+  Require all denied
+</FilesMatch>
+
+php_flag engine off
